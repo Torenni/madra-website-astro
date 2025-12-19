@@ -1,0 +1,45 @@
+---
+const nav = [
+  { label: "About", href: "/about" },
+  { label: "Reports", href: "/reports" },
+  { label: "Insights", href: "/insights" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<header class="border-b bg-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <!-- Brand -->
+    <a href="/" class="flex items-center gap-3">
+      <!-- Placeholder logo circle (replace later with your real logo) -->
+      <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-white font-bold">
+        M
+      </span>
+      <div class="leading-tight">
+        <div class="text-sm font-semibold text-slate-900">MADRA</div>
+        <div class="text-xs text-slate-500">Managing for Development Results Associates</div>
+      </div>
+    </a>
+
+    <!-- Nav -->
+    <nav class="hidden gap-6 md:flex">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          class="text-sm font-medium text-slate-700 hover:text-slate-900"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- CTA -->
+    <a
+      href="/contact"
+      class="hidden rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800 md:inline-flex"
+    >
+      Get in touch
+    </a>
+  </div>
+</header>

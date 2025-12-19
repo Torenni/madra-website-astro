@@ -1,0 +1,103 @@
+---
+import "../styles/global.css";
+
+// Normalize BASE_URL so links work whether it ends with "/" or not
+const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, ""); // "" or "/madra-website-astro"
+
+const nav = [
+  { label: "About", href: "about" },
+  { label: "Reports", href: "reports" },
+  { label: "Insights", href: "insights" },
+  { label: "Blog", href: "blog" },
+];
+
+const withBase = (path) => `${base}/${path}`.replace(/\/+/g, "/");
+const home = base === "" ? "/" : `${base}/`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MADRA</title>
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <!-- Brand -->
+        <a href={home} class="flex items-center gap-3">
+          <div class="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-slate-50 text-sm font-semibold">
+            M
+          </div>
+          <div class="leading-tight">
+            <div class="text-sm font-semibold tracking-tight">MADRA</div>
+            <div class="text-xs text-slate-600">Managing for Development Results Associates</div>
+          </div>
+        </a>
+
+        <!-- Nav (desktop) -->
+        <nav class="hidden items-center gap-6 md:flex">
+          {nav.map((item) => (
+            <a
+              href={withBase(item.href)}
+              class="text-sm font-medium text-slate-700 hover:text-slate-900"
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href={withBase("contact")}
+            class="rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+          >
+            Contact
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="mx-auto max-w-6xl px-6 py-10">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200">
+      <div class="mx-auto grid max-w-6xl gap-6 px-6 py-10 md:grid-cols-3">
+        <div>
+          <div class="text-sm font-semibold">MADRA</div>
+          <p class="mt-2 text-sm text-slate-600">
+            Strategy, project management, monitoring & evaluation, and data services.
+          </p>
+        </div>
+
+        <div>
+          <div class="text-sm font-semibold">Links</div>
+          <ul class="mt-2 space-y-2 text-sm">
+            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("reports")}>Reports</a></li>
+            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("insights")}>Insights</a></li>
+            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("blog")}>Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-sm font-semibold">Contact</div>
+          <p class="mt-2 text-sm text-slate-600">
+            Email: <a class="underline hover:text-slate-900" href="mailto:info@madra.org">info@madra.org</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-200">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 text-xs text-slate-500">
+          <span>© {new Date().getFullYear()} MADRA</span>
+          <a class="hover:text-slate-700" href="https://github.com/torenni/madra-website-astro" target="_blank" rel="noreferrer">
+            GitHub Repo
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
