@@ -1,27 +1,29 @@
 ---
 const nav = [
-  { label: "About", href: "/about" },
-  { label: "Reports", href: "/reports" },
-  { label: "Insights", href: "/insights" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "about" },
+  { label: "Reports", href: "reports" },
+  { label: "Insights", href: "insights" },
+  { label: "Blog", href: "blog" },
+  { label: "Contact", href: "contact" },
 ];
 
-const BASE = import.meta.env.BASE_URL; // important for GitHub Pages project sites
+const BASE = import.meta.env.BASE_URL; // includes /madra-website-astro/
 ---
 
 <header class="border-b bg-white">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
     <!-- Brand -->
-    <a href={`${BASE}`} class="flex items-center gap-4">
+    <a href={BASE} class="flex items-center gap-4">
       <img
-        src= "/images/logo/madra_logo.jpeg"
+        src={`${BASE}images/logo/madra_logo.svg`}
         alt="MADRA logo"
         class="h-14 w-auto md:h-16"
         loading="eager"
       />
       <div class="leading-tight">
-        <div class="text-base font-semibold text-slate-900 md:text-lg">MADRA</div>
+        <div class="text-base font-semibold text-slate-900 md:text-lg">
+          MADRA
+        </div>
         <div class="text-sm text-slate-500 md:text-base">
           Managing for Development Results Associates
         </div>
@@ -32,7 +34,7 @@ const BASE = import.meta.env.BASE_URL; // important for GitHub Pages project sit
     <nav class="hidden gap-8 md:flex">
       {nav.map((item) => (
         <a
-          href={`${BASE}${item.href.replace(/^\//, "")}`}
+          href={`${BASE}${item.href}`}
           class="text-base font-semibold tracking-wide text-slate-700 hover:text-slate-900"
         >
           {item.label}
