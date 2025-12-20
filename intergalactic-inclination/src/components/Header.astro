@@ -9,32 +9,32 @@ const nav = [
 ---
 
 <header class="border-b bg-white">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5">
-    
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
     <!-- Brand -->
     <a href="/" class="flex items-center gap-4">
-      
-      <!-- Larger logo (IEG-style) -->
+      <!-- Real logo (bigger) -->
       <img
         src="/images/logo/madra_logo.svg"
         alt="MADRA logo"
-        class="h-14 w-auto"
+        class="h-14 w-auto md:h-16"
+        loading="eager"
+        decoding="async"
       />
 
       <div class="leading-tight">
-        <div class="text-base font-semibold text-slate-900">MADRA</div>
-        <div class="text-xs text-slate-500">
+        <div class="text-base font-semibold text-slate-900 md:text-lg">MADRA</div>
+        <div class="text-xs text-slate-500 md:text-sm">
           Managing for Development Results Associates
         </div>
       </div>
     </a>
 
-    <!-- Nav -->
-    <nav class="hidden gap-6 md:flex">
+    <!-- Nav (bigger font like your example) -->
+    <nav class="hidden gap-8 md:flex">
       {nav.map((item) => (
         <a
           href={item.href}
-          class="text-sm font-medium text-slate-700 hover:text-slate-900"
+          class="text-base font-semibold tracking-wide text-slate-700 hover:text-slate-900"
         >
           {item.label}
         </a>
@@ -50,4 +50,3 @@ const nav = [
     </a>
   </div>
 </header>
-
