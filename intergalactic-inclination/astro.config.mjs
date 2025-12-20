@@ -1,13 +1,6 @@
-// @ts-check
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  output: "static",
   site: "https://torenni.github.io",
   base: "/madra-website-astro",
-  vite: {
-    plugins: [tailwindcss()],
-  },
 });
-
