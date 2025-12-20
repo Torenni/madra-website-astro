@@ -12,9 +12,9 @@ const nav = [
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
     <!-- Brand -->
     <a href="/" class="flex items-center gap-4">
-      <!-- Real logo (bigger) -->
+      <!-- Real logo (served from /public) -->
       <img
-        src="/images/logo/madra_logo.svg"
+        src="/images/logo/madra_logo.jpeg"
         alt="MADRA logo"
         class="h-14 w-auto md:h-16"
         loading="eager"
@@ -23,18 +23,18 @@ const nav = [
 
       <div class="leading-tight">
         <div class="text-base font-semibold text-slate-900 md:text-lg">MADRA</div>
-        <div class="text-xs text-slate-500 md:text-sm">
+        <div class="text-sm text-slate-500 md:text-base">
           Managing for Development Results Associates
         </div>
       </div>
     </a>
 
-    <!-- Nav (bigger font like your example) -->
+    <!-- Nav -->
     <nav class="hidden gap-8 md:flex">
       {nav.map((item) => (
         <a
           href={item.href}
-          class="text-base font-semibold tracking-wide text-slate-700 hover:text-slate-900"
+          class="text-base font-semibold text-slate-700 hover:text-slate-900"
         >
           {item.label}
         </a>
@@ -44,9 +44,9 @@ const nav = [
     <!-- CTA -->
     <a
       href="/contact"
-      class="hidden rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800 md:inline-flex"
+      class="hidden rounded-md bg-slate-900 px-5 py-2.5 text-base font-semibold text-white hover:bg-slate-800 md:inline-flex"
     >
-      Get in touch
+      Contact
     </a>
   </div>
 </header>

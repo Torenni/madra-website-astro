@@ -29,12 +29,12 @@ jobs:
           cache-dependency-path: intergalactic-inclination/package-lock.json
 
       - name: Install dependencies
-        run: npm ci
         working-directory: intergalactic-inclination
+        run: npm ci
 
       - name: Build
-        run: npm run build
         working-directory: intergalactic-inclination
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
