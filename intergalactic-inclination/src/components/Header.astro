@@ -15,10 +15,14 @@ const BASE = import.meta.env.BASE_URL; // includes /madra-website-astro/
     <!-- Brand -->
     <a href={BASE} class="flex items-center gap-4">
       <img
-        src={`${BASE}images/logo/madra_logo.svg`}
+        src={`${import.meta.env.BASE_URL}images/logo/madra_logo.svg`}
         alt="MADRA logo"
-        class="h-14 w-auto md:h-16"
+        width="44"
+        height="44"
+        style="height:44px;width:auto;max-width:44px;"
+        class="h-10 w-auto md:h-12"
         loading="eager"
+        decoding="async"
       />
       <div class="leading-tight">
         <div class="text-base font-semibold text-slate-900 md:text-lg">
