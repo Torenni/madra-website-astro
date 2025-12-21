@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://torenni.github.io",
-  base: "/madra-website-astro",
+  integrations: [tailwind()],
 });
