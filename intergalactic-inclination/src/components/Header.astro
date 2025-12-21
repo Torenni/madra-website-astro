@@ -1,21 +1,24 @@
 ---
+const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+const withBase = (path) => `${base}/${path}`.replace(/\/+/g, "/");
+
 const nav = [
-  { label: "About", href: "about" },
-  { label: "Reports", href: "reports" },
-  { label: "Insights", href: "insights" },
-  { label: "Blog", href: "blog" },
-  { label: "Contact", href: "contact" },
+  { label: "About", href: "about/" },
+  { label: "Reports", href: "reports/" },
+  { label: "Insights", href: "insights/" },
+  { label: "Blog", href: "blog/" },
+  { label: "Contact", href: "contact/" },
 ];
 
-const BASE = import.meta.env.BASE_URL; // includes /madra-website-astro/
+const home = base === "" ? "/" : `${base}/`;
+const logoSrc = withBase("images/logo/madra_logo.svg");
 ---
 
 <header class="border-b bg-white">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-    <!-- Brand -->
-    <a href={BASE} class="flex items-center gap-4">
+    <a href={home} class="flex items-center gap-4">
       <img
-        src={`${import.meta.env.BASE_URL}images/logo/madra_logo.svg`}
+        src={logoSrc}
         alt="MADRA logo"
         width="44"
         height="44"
@@ -25,20 +28,17 @@ const BASE = import.meta.env.BASE_URL; // includes /madra-website-astro/
         decoding="async"
       />
       <div class="leading-tight">
-        <div class="text-base font-semibold text-slate-900 md:text-lg">
-          MADRA
-        </div>
+        <div class="text-base font-semibold text-slate-900 md:text-lg">MADRA</div>
         <div class="text-sm text-slate-500 md:text-base">
           Managing for Development Results Associates
         </div>
       </div>
     </a>
 
-    <!-- Nav -->
     <nav class="hidden gap-8 md:flex">
       {nav.map((item) => (
         <a
-          href={`${BASE}${item.href}`}
+          href={withBase(item.href)}
           class="text-base font-semibold tracking-wide text-slate-700 hover:text-slate-900"
         >
           {item.label}
@@ -46,13 +46,11 @@ const BASE = import.meta.env.BASE_URL; // includes /madra-website-astro/
       ))}
     </nav>
 
-    <!-- CTA -->
     <a
-      href={`${BASE}contact`}
+      href={withBase("contact/")}
       class="hidden rounded-md bg-slate-900 px-5 py-2.5 text-base font-semibold text-white hover:bg-slate-800 md:inline-flex"
     >
       Contact
     </a>
   </div>
 </header>
-

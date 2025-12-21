@@ -5,17 +5,16 @@ import "../styles/global.css";
 const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, ""); // "" or "/madra-website-astro"
 
 const nav = [
-  { label: "About", href: "about" },
-  { label: "Reports", href: "reports" },
-  { label: "Insights", href: "insights" },
-  { label: "Blog", href: "blog" },
+  { label: "About", href: "about/" },
+  { label: "Reports", href: "reports/" },
+  { label: "Insights", href: "insights/" },
+  { label: "Blog", href: "blog/" },
 ];
 
 const withBase = (path) => `${base}/${path}`.replace(/\/+/g, "/");
 const home = base === "" ? "/" : `${base}/`;
 
-// ✅ Logo path served from /public/images/logo/...
-// Use SVG (best for crisp logo). You confirmed this URL works online.
+// Logo
 const logoSrc = withBase("images/logo/madra_logo.svg");
 ---
 
@@ -59,7 +58,7 @@ const logoSrc = withBase("images/logo/madra_logo.svg");
             </a>
           ))}
           <a
-            href={withBase("contact")}
+            href={withBase("contact/")}
             class="rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
           >
             Contact
@@ -86,9 +85,9 @@ const logoSrc = withBase("images/logo/madra_logo.svg");
         <div>
           <div class="text-sm font-semibold">Links</div>
           <ul class="mt-2 space-y-2 text-sm">
-            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("reports")}>Reports</a></li>
-            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("insights")}>Insights</a></li>
-            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("blog")}>Blog</a></li>
+            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("reports/")}>Reports</a></li>
+            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("insights/")}>Insights</a></li>
+            <li><a class="text-slate-600 hover:text-slate-900" href={withBase("blog/")}>Blog</a></li>
           </ul>
         </div>
 
@@ -111,4 +110,3 @@ const logoSrc = withBase("images/logo/madra_logo.svg");
     </footer>
   </body>
 </html>
-
