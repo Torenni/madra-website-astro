@@ -9,9 +9,9 @@ const coverImg = withBase("images/covers/cover_page.webp");
 ---
 
 <Layout>
-  <!-- Full-width hero -->
+  <!-- Full-width hero (IEG-style) -->
   <section class="w-full">
-    <div class="mx-auto max-w-6xl px-6">
+    <div class="mx-auto w-full">
       <div
         class="
           grid overflow-hidden
@@ -28,36 +28,39 @@ const coverImg = withBase("images/covers/cover_page.webp");
             md:border-r md:border-white/15
           "
         >
-          <span class="badge fade-up delay-1">Featured Report</span>
+          <!-- Constrain text like IEG -->
+          <div class="mx-auto max-w-xl">
+            <span class="badge fade-up delay-1">Featured Report</span>
 
-          <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl fade-up delay-2">
-            MADRA
-          </h1>
+            <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl fade-up delay-2">
+              MADRA
+            </h1>
 
-          <p class="mt-5 max-w-xl text-base text-white/85 md:text-lg fade-up delay-3">
-            A professional services firm providing strategy, project management,
-            monitoring & evaluation, and data solutions.
-          </p>
+            <p class="mt-5 text-base text-white/85 md:text-lg fade-up delay-3">
+              A professional services firm providing strategy, project management,
+              monitoring & evaluation, and data solutions.
+            </p>
 
-          <div class="mt-8 flex flex-wrap gap-3 fade-up delay-4">
-            <a
-              class="rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
-              href={withBase("reports/")}
-            >
-              View Reports
-            </a>
+            <div class="mt-8 flex flex-wrap gap-3 fade-up delay-4">
+              <a
+                class="rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
+                href={withBase("reports/")}
+              >
+                View Reports
+              </a>
 
-            <a
-              class="rounded-md border border-white/35 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              href={withBase("about/")}
-            >
-              About MADRA
-            </a>
+              <a
+                class="rounded-md border border-white/35 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                href={withBase("about/")}
+              >
+                About MADRA
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- RIGHT: Image with dark overlay (IEG feel) -->
-        <div class="relative min-h-[360px] md:min-h-[520px]">
+        <!-- RIGHT: Image edge-to-edge -->
+        <div class="relative min-h-[420px] md:min-h-[620px]">
           <img
             src={coverImg}
             alt="MADRA cover image"
@@ -77,13 +80,13 @@ const coverImg = withBase("images/covers/cover_page.webp");
   </section>
 
   <style>
-    /* Blue panel (IEG-ish) */
+    /* Blue panel (IEG-inspired) */
     .hero-left {
       background: linear-gradient(135deg, #0b4f73 0%, #0b2f4a 55%, #081b2c 100%);
       color: #fff;
     }
 
-    /* Fade-up animation (staggered) */
+    /* Fade-up animation */
     .fade-up {
       opacity: 0;
       transform: translateY(12px);
@@ -125,3 +128,4 @@ const coverImg = withBase("images/covers/cover_page.webp");
     }
   </style>
 </Layout>
+
