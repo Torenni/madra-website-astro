@@ -1,52 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-const coverImage = "/images/covers/cover_page.png";
 ---
 
-<Layout>
-  <!-- Hero section -->
-  <section class="relative overflow-hidden">
-    <div class="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-2 min-h-[70vh]">
-
-      <!-- LEFT: Text content -->
-      <div class="flex flex-col justify-center px-6 py-16 md:px-12 bg-white">
-        <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-          MADRA
-        </h1>
-
-        <p class="mt-6 text-lg text-slate-600 max-w-xl">
-          A professional services firm providing strategy, project management,
-          monitoring & evaluation, and data solutions.
-        </p>
-
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a
-            href="/reports/"
-            class="rounded-md bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800"
-          >
-            View Reports
-          </a>
-
-          <a
-            href="/about/"
-            class="rounded-md border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-          >
-            About MADRA
-          </a>
-        </div>
-      </div>
-
-      <!-- RIGHT: Image -->
-      <div class="relative hidden md:block">
-        <img
-          src={coverImage}
-          alt="MADRA cover image"
-          class="absolute inset-0 h-full w-full object-cover"
-          loading="eager"
-        />
-      </div>
-
-    </div>
-  </section>
+<Layout title="About MADRA">
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    <h1 class="text-4xl font-bold">About MADRA</h1>
+    <p class="mt-4 text-lg text-gray-600">
+      Managing for Development Results Associates (MADRA) provides monitoring & evaluation, and data solutions.
+    </p>
+  </main>
 </Layout>
+
+
