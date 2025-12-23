@@ -9,21 +9,18 @@ const coverImg = withBase("images/covers/cover_page.webp");
 ---
 
 <Layout>
-  <!-- Full-width hero (true IEG-style) -->
-  <section class="w-full overflow-hidden">
+  <!-- FULL-BLEED HERO (forces edge-to-edge even inside a max-width parent) -->
+  <section
+    class="
+      relative w-screen max-w-none overflow-hidden
+      left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]
+    "
+  >
     <div class="grid md:grid-cols-2 min-h-[520px]">
-      
       <!-- LEFT: Blue MADRA panel -->
-      <div
-        class="
-          hero-left
-          px-8 py-14
-          md:px-12 md:py-20
-          flex items-center
-        "
-      >
+      <div class="hero-left px-8 py-14 md:px-12 md:py-20 flex items-center">
         <!-- Constrain text ONLY (IEG pattern) -->
-        <div class="mx-auto max-w-xl">
+        <div class="mx-auto w-full max-w-xl">
           <span class="badge fade-up delay-1">Featured Report</span>
 
           <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl fade-up delay-2">
@@ -54,7 +51,7 @@ const coverImg = withBase("images/covers/cover_page.webp");
       </div>
 
       <!-- RIGHT: Image edge-to-edge -->
-      <div class="relative min-h-[80vh]">
+      <div class="relative min-h-[520px]">
         <img
           src={coverImg}
           alt="MADRA cover image"
@@ -69,7 +66,6 @@ const coverImg = withBase("images/covers/cover_page.webp");
         <!-- Subtle vignette -->
         <div class="pointer-events-none absolute inset-0 shadow-[inset_0_0_160px_rgba(0,0,0,0.45)]"></div>
       </div>
-
     </div>
   </section>
 
@@ -122,3 +118,4 @@ const coverImg = withBase("images/covers/cover_page.webp");
     }
   </style>
 </Layout>
+
