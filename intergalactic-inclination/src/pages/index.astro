@@ -9,73 +9,68 @@ const coverImg = withBase("images/covers/cover_page.webp");
 ---
 
 <Layout>
-  <!-- Full-width hero (IEG-style) -->
+  <!-- Full-width hero (true IEG-style) -->
   <section class="w-full overflow-hidden">
-    <div class="w-full">
+    <!-- NO max-w, NO horizontal padding -->
+    <div class="grid md:grid-cols-2 min-h-[80vh] w-full">
+      
+      <!-- LEFT: Blue MADRA panel -->
       <div
         class="
-          grid 
-          md:grid-cols-2
-          min-h-[520px]
+          hero-left
+          px-8 py-14
+          md:px-12 md:py-20
+          flex items-center
         "
       >
-        <!-- LEFT: Blue MADRA panel -->
-        <div
-          class="
-            hero-left
-            px-8 py-14
-            md:px-12 md:py-20
-            md:border-r md:border-white/15
-          "
-        >
-          <!-- Constrain text like IEG -->
-          <div class="mx-auto max-w-xl">
-            <span class="badge fade-up delay-1">Featured Report</span>
+        <!-- Constrain text ONLY (IEG pattern) -->
+        <div class="mx-auto max-w-xl">
+          <span class="badge fade-up delay-1">Featured Report</span>
 
-            <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl fade-up delay-2">
-              MADRA
-            </h1>
+          <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl fade-up delay-2">
+            MADRA
+          </h1>
 
-            <p class="mt-5 text-base text-white/85 md:text-lg fade-up delay-3">
-              A professional services firm providing strategy, project management,
-              monitoring & evaluation, and data solutions.
-            </p>
+          <p class="mt-5 text-base text-white/85 md:text-lg fade-up delay-3">
+            A professional services firm providing strategy, project management,
+            monitoring & evaluation, and data solutions.
+          </p>
 
-            <div class="mt-8 flex flex-wrap gap-3 fade-up delay-4">
-              <a
-                class="rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
-                href={withBase("reports/")}
-              >
-                View Reports
-              </a>
+          <div class="mt-8 flex flex-wrap gap-3 fade-up delay-4">
+            <a
+              class="rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
+              href={withBase("reports/")}
+            >
+              View Reports
+            </a>
 
-              <a
-                class="rounded-md border border-white/35 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
-                href={withBase("about/")}
-              >
-                About MADRA
-              </a>
-            </div>
+            <a
+              class="rounded-md border border-white/35 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+              href={withBase("about/")}
+            >
+              About MADRA
+            </a>
           </div>
         </div>
-
-        <!-- RIGHT: Image edge-to-edge -->
-        <div class="relative min-h-[420px] md:min-h-[620px]">
-          <img
-            src={coverImg}
-            alt="MADRA cover image"
-            class="h-full w-full object-cover"
-            loading="eager"
-            decoding="async"
-          />
-
-          <!-- Dark overlay -->
-          <div class="absolute inset-0 bg-slate-900/50"></div>
-
-          <!-- Subtle vignette -->
-          <div class="pointer-events-none absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.45)]"></div>
-        </div>
       </div>
+
+      <!-- RIGHT: Image edge-to-edge -->
+      <div class="relative min-h-[80vh]">
+        <img
+          src={coverImg}
+          alt="MADRA cover image"
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+          decoding="async"
+        />
+
+        <!-- Dark overlay (IEG feel) -->
+        <div class="absolute inset-0 bg-slate-900/50"></div>
+
+        <!-- Subtle vignette -->
+        <div class="pointer-events-none absolute inset-0 shadow-[inset_0_0_160px_rgba(0,0,0,0.45)]"></div>
+      </div>
+
     </div>
   </section>
 
@@ -128,4 +123,3 @@ const coverImg = withBase("images/covers/cover_page.webp");
     }
   </style>
 </Layout>
-
