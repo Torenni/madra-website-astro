@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 // Normalize BASE_URL so links work whether it ends with "/" or not
-const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, ""); // "" or "/madra-website-astro"
+const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
 
 const nav = [
   { label: "About", href: "about/" },
@@ -14,8 +14,10 @@ const nav = [
 const withBase = (path) => `${base}/${path}`.replace(/\/+/g, "/");
 const home = base === "" ? "/" : `${base}/`;
 
-// Logo
 const logoSrc = withBase("images/logo/madra_logo.svg");
+
+// ✅ NEW
+const { title = "MADRA", fullBleed = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,36 +25,24 @@ const logoSrc = withBase("images/logo/madra_logo.svg");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MADRA</title>
+    <title>{title}</title>
   </head>
 
   <body class="min-h-screen bg-white text-slate-900">
     <!-- Header -->
     <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <!-- Brand -->
         <a href={home} class="flex items-center gap-3">
-          <img
-            src={logoSrc}
-            alt="MADRA logo"
-            class="h-10 w-auto md:h-12"
-            loading="eager"
-            decoding="async"
-          />
-
+          <img src={logoSrc} alt="MADRA logo" class="h-10 w-auto md:h-12" loading="eager" decoding="async" />
           <div class="leading-tight">
             <div class="text-sm font-semibold tracking-tight">MADRA</div>
             <div class="text-xs text-slate-600">Managing for Development Results Associates</div>
           </div>
         </a>
 
-        <!-- Nav (desktop) -->
         <nav class="hidden items-center gap-6 md:flex">
           {nav.map((item) => (
-            <a
-              href={withBase(item.href)}
-              class="text-sm font-medium text-slate-700 hover:text-slate-900"
-            >
+            <a href={withBase(item.href)} class="text-sm font-medium text-slate-700 hover:text-slate-900">
               {item.label}
             </a>
           ))}
@@ -66,9 +56,15 @@ const logoSrc = withBase("images/logo/madra_logo.svg");
       </div>
     </header>
 
-    <!-- Main content -->
+    <!-- ✅ Main content -->
     <main>
-      <slot />
+      {fullBleed ? (
+        <slot />
+      ) : (
+        <section class="mx-auto max-w-6xl px-6 py-12">
+          <slot />
+        </section>
+      )}
     </main>
 
     <!-- Footer -->
