@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 
 const reports = [
-  { title: "Key Documents", href: "/reports/key-documents" },
-  { title: "Technical Papers", href: "/reports/technical-papers" },
+  { title: "Key Documents", href: "key-documents/" },
+  { title: "Technical Papers", href: "technical-papers/" },
 ];
 ---
 
@@ -18,10 +18,7 @@ const reports = [
     <ul class="mt-8 space-y-3">
       {reports.map((r) => (
         <li>
-          <a
-            class="font-medium text-blue-700 hover:underline"
-            href={r.href}
-          >
+          <a class="font-medium text-blue-700 hover:underline" href={r.href}>
             {r.title}
           </a>
         </li>
@@ -29,5 +26,4 @@ const reports = [
     </ul>
   </section>
 </Layout>
-
 
