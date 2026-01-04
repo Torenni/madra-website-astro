@@ -1,30 +1,32 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+const reports = [
+  { title: "Key Documents", href: "key-documents/" },
+  { title: "Technical Papers", href: "technical-papers/" },
+];
 ---
 
 <Layout title="Reports | MADRA">
-  <h1 class="text-3xl font-bold">Reports</h1>
+  <section class="mx-auto max-w-6xl px-6 py-12">
+    <h1 class="text-3xl font-bold tracking-tight">Reports</h1>
 
-  <p class="mt-4 text-slate-700 max-w-3xl">
-    Browse MADRA’s publications, flagship reports, and technical outputs.
-  </p>
+    <p class="mt-4 max-w-3xl text-slate-700">
+      Browse our publications and technical outputs.
+    </p>
 
-  <ul class="mt-8 space-y-3">
-    <li>
-      <a
-        href="/reports/key-documents"
-        class="font-medium text-blue-700 hover:underline"
-      >
-        Key Documents
-      </a>
-    </li>
-    <li>
-      <a
-        href="/reports/technical-papers"
-        class="font-medium text-blue-700 hover:underline"
-      >
-        Technical Papers
-      </a>
-    </li>
-  </ul>
+    <ul class="mt-8 space-y-3">
+      {reports.map((r) => (
+        <li>
+          <a
+            class="font-medium text-blue-700 hover:underline"
+            href={r.href}
+          >
+            {r.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
 </Layout>
+
