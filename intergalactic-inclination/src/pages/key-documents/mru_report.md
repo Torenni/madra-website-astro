@@ -47,7 +47,7 @@ structural characteristics, such as fragile economies, a young and
 rapidly growing population, and a high dependence on agriculture and
 natural resource exports.
 
-![](../../assets/reports_pics/mru_countries.png)
+![](images/reports_pics/mru_countries.png)
 
 The MRU countries have faced recurrent shocks that have hindered
 sustained economic growth and poverty reduction. Prolonged civil
@@ -183,7 +183,7 @@ periods of expansion, contraction, and partial recovery as the region
 navigated post-war reconstruction, health emergencies, and global market
 disruptions.
 
-![](../../assets/reports_pics/net_assistance.png)
+![](images/reports_pics/net_assistance.png)
 
 Aid disbursements across the twelve-year span were unevenly distributed,
 with Côte d’Ivoire receiving the largest cumulative share. Between 2010
@@ -208,7 +208,7 @@ MRU region is not steady or predictable; rather, it is heavily
 responsive to crises, with major donors reallocating funds based on
 humanitarian and health priorities.
 
-![](../../assets/reports_pics/total_aid.png)
+![](images/reports_pics/total_aid.png)
 
 Economic performance during the same period displayed similar
 volatility, underscoring the region’s vulnerability to both internal and
@@ -235,7 +235,7 @@ Although Guinea received less aid overall, it displayed steady and
 moderate growth of **4-6 per cent** per year, supported by continuous
 investment in mining and energy projects, even during crisis years.
 
-![](../../assets/reports_pics/gdp_growth.png)
+![](images/reports_pics/gdp_growth.png)
 
 A closer examination of both aid and GDP patterns reveals important
 co-movements between the two variables. In years of crisis, particularly
@@ -312,10 +312,7 @@ still showing positive growth, displayed a smaller growth advantage of
 approximately **4.7 per cent**, reflecting moderate economic progress
 but continued vulnerability to aid dependence and external shocks.
 
-<figure>
-  <img src="../../assets/reports_pics/model_image.png" alt="Aid Impact on GDP Growth" />
-  <figcaption aria-hidden="true">Aid Impact on GDP Growth</figcaption>
-</figure>
+![Aid Impact on GDP Growth](images/reports_pics/model_image.png)>
 
 
 The fitted-value plot of predicted GDP growth against net aid visually
