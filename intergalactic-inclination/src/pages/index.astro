@@ -7,23 +7,68 @@ const withBase = (path) => `${base}/${path}`.replace(/\/+/g, "/");
 // HERO image
 const coverImg = withBase("images/covers/cover_page.webp");
 
-// Recent section cover image (you said it is in: public/images/report_covers/)
+// Recent section cover image
 const mruCover = withBase("images/report_covers/mru_logo.jpg");
 
-// Report file (you said it is in: public/key-documents/)
+// Report file
 const mruReport = withBase("key-documents/mru_report.md");
 ---
 
 <Layout title="MADRA" fullBleed>
-  <!-- =========================================
-       HERO (KEEP YOUR EXISTING FULL-BLEED HERO)
-       IMPORTANT: make sure it ends with </section>
-  ========================================== -->
+  <!-- FULL-BLEED HERO (edge-to-edge) -->
+  <section
+    class="
+      relative w-screen max-w-none overflow-hidden
+      left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]
+    "
+  >
+    <div class="grid md:grid-cols-2 min-h-[520px]">
+      <!-- LEFT: Blue MADRA panel -->
+      <div class="hero-left px-8 py-14 md:px-12 md:py-20 flex items-center">
+        <div class="mx-auto w-full max-w-xl">
+          <span class="badge fade-up delay-1">Featured Report</span>
 
-  <!-- ✅ PASTE YOUR EXISTING HERO SECTION HERE EXACTLY AS-IS -->
-  <!-- It should be the one with:
-       class="relative w-screen max-w-none ... -ml-[50vw] -mr-[50vw]"
-  -->
+          <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl fade-up delay-2">
+            MADRA
+          </h1>
+
+          <p class="mt-5 text-base text-white/85 md:text-lg fade-up delay-3">
+            A professional services firm providing strategy, project management,
+            monitoring & evaluation, and data solutions.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3 fade-up delay-4">
+            <a
+              class="rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
+              href={withBase("reports/")}
+            >
+              View Reports
+            </a>
+
+            <a
+              class="rounded-md border border-white/35 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+              href={withBase("about/")}
+            >
+              About MADRA
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Image edge-to-edge -->
+      <div class="relative min-h-[520px]">
+        <img
+          src={coverImg}
+          alt="MADRA cover image"
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-slate-900/50"></div>
+        <div class="pointer-events-none absolute inset-0 shadow-[inset_0_0_160px_rgba(0,0,0,0.45)]"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- =========================
        RECENT (IEG-style strip)
@@ -132,6 +177,53 @@ const mruReport = withBase("key-documents/mru_report.md");
     </div>
   </section>
 
-  <!-- ✅ KEEP YOUR EXISTING <style> ... </style> BELOW (from your HERO file) -->
+  <style>
+    /* Blue panel (IEG-inspired) */
+    .hero-left {
+      background: linear-gradient(135deg, #0b4f73 0%, #0b2f4a 55%, #081b2c 100%);
+      color: #fff;
+    }
+
+    /* Fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 700ms ease-out forwards;
+    }
+    .delay-1 { animation-delay: 80ms; }
+    .delay-2 { animation-delay: 160ms; }
+    .delay-3 { animation-delay: 240ms; }
+    .delay-4 { animation-delay: 320ms; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Featured badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .45rem .7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      background: rgba(0, 0, 0, .25);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  </style>
 </Layout>
 
