@@ -4,14 +4,18 @@ import Layout from "../layouts/Layout.astro";
 const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
 const withBase = (path) => `${base}/${path}`.replace(/\/+/g, "/");
 
+// HERO image
 const coverImg = withBase("images/covers/cover_page.webp");
+
+// Recent card cover image
+const mruCover = withBase("images/report_covers/mru_logo.jpg");
+
+// ✅ Link to the rendered page (after you move the MD into src/pages)
+const mruReport = withBase("key-documents/mru_report/");
 ---
 
 <Layout title="MADRA" fullBleed>
-  <!-- =========================
-       FULL-BLEED HERO (edge-to-edge)
-       IMPORTANT: This wrapper is what makes it full width.
-  ========================== -->
+  <!-- FULL-BLEED HERO (edge-to-edge) -->
   <section
     class="
       relative w-screen max-w-none overflow-hidden
@@ -19,86 +23,81 @@ const coverImg = withBase("images/covers/cover_page.webp");
     "
   >
     <div class="grid md:grid-cols-2 min-h-[520px]">
-      <!-- LEFT PANEL (your existing left hero content) -->
+      <!-- LEFT: Blue MADRA panel -->
       <div class="hero-left px-8 py-14 md:px-12 md:py-20 flex items-center">
         <div class="mx-auto w-full max-w-xl">
-          <!-- ✅ KEEP your existing hero text/buttons here -->
-          <!-- Example: badge, MADRA title, description, buttons -->
+          <!-- ✅ Put your real hero content back here -->
+          <span class="badge fade-up delay-1">Featured Report</span>
+
+          <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl fade-up delay-2">
+            MADRA
+          </h1>
+
+          <p class="mt-5 text-base text-white/85 md:text-lg fade-up delay-3">
+            A professional services firm providing strategy, project management,
+            monitoring & evaluation, and data solutions.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3 fade-up delay-4">
+            <a
+              class="rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
+              href={withBase("reports/")}
+            >
+              View Reports
+            </a>
+
+            <a
+              class="rounded-md border border-white/35 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
+              href={withBase("about/")}
+            >
+              About MADRA
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- RIGHT IMAGE (cover photo) -->
-      <div class="relative">
+      <!-- RIGHT: Image truly edge-to-edge -->
+      <div class="relative min-h-[520px]">
         <img
           src={coverImg}
-          alt="MADRA cover"
-          class="h-full w-full object-cover"
+          alt="MADRA cover image"
+          class="absolute inset-0 h-full w-full object-cover"
           loading="eager"
           decoding="async"
         />
-        <!-- optional: overlay if you had one -->
+        <div class="absolute inset-0 bg-slate-900/50"></div>
+        <div class="pointer-events-none absolute inset-0 shadow-[inset_0_0_160px_rgba(0,0,0,0.45)]"></div>
       </div>
     </div>
   </section>
 
-   <!-- =========================
-       RECENT (IEG-style strip) — FULL BLEED
-  ========================== -->
-  <section
-    class="
-      relative w-screen max-w-none
-      left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]
-      border-t border-slate-200 bg-white
-    "
-  >
+  <!-- RECENT -->
+  <section class="border-t border-slate-200 bg-white">
     <div class="mx-auto max-w-6xl px-6 py-12">
       <!-- Header + tabs -->
       <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div class="flex items-center gap-3">
-          <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white">
-            ▶
-          </span>
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white">▶</span>
           <h2 class="text-2xl font-bold tracking-tight">Recent</h2>
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <a
-            href={withBase("blog/")}
-            class="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-          >
-            Blog
-          </a>
-          <a
-            href={withBase("reports/key-documents/")}
-            class="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-          >
-            Key Documents
-          </a>
-          <a
-            href={withBase("reports/technical-papers/")}
-            class="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-          >
-            Technical Papers
-          </a>
-          <a
-            href={withBase("insights/")}
-            class="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-          >
-            Insights
-          </a>
+          <a href={withBase("blog/")} class="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Blog</a>
+          <a href={withBase("reports/key-documents/")} class="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Key Documents</a>
+          <a href={withBase("reports/technical-papers/")} class="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Technical Papers</a>
+          <a href={withBase("insights/")} class="rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Insights</a>
         </div>
       </div>
 
-      <!-- Cards row: 3 reports + View All -->
+      <!-- Cards -->
       <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <!-- Report card 1 -->
         <a
-          href={withBase("key-documents/mru_report/")}
+          href={mruReport}
           class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
         >
           <div class="aspect-[16/10] overflow-hidden bg-slate-100">
             <img
-              src={withBase("images/report_covers/mru_logo.jpg")}
+              src={mruCover}
               alt="Does Aid Foster Growth? cover"
               class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
               loading="lazy"
@@ -108,9 +107,7 @@ const coverImg = withBase("images/covers/cover_page.webp");
 
           <div class="p-4">
             <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-              <span class="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 text-slate-700">
-                Key Document
-              </span>
+              <span class="inline-flex items-center rounded-full bg-slate-100 px-2 py-1 text-slate-700">Key Document</span>
             </div>
 
             <h3 class="mt-3 line-clamp-2 text-sm font-bold text-slate-900">
@@ -118,36 +115,51 @@ const coverImg = withBase("images/covers/cover_page.webp");
             </h3>
 
             <div class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-slate-900">
-              Read Report
-              <span class="transition group-hover:translate-x-0.5">→</span>
+              Read Report <span class="transition group-hover:translate-x-0.5">→</span>
             </div>
           </div>
         </a>
 
-        <!-- Placeholder card 2 -->
         <div class="rounded-xl border border-dashed border-slate-300 bg-white p-6 text-sm text-slate-600">
           <div class="font-semibold text-slate-900">Coming soon</div>
           <div class="mt-2">Add your next Key Document here.</div>
         </div>
 
-        <!-- Placeholder card 3 -->
         <div class="rounded-xl border border-dashed border-slate-300 bg-white p-6 text-sm text-slate-600">
           <div class="font-semibold text-slate-900">Coming soon</div>
           <div class="mt-2">Add your next Technical Paper here.</div>
         </div>
 
-        <!-- View All tile -->
-        <a
-          href={withBase("reports/")}
-          class="group flex items-center justify-center rounded-xl bg-sky-600 p-6 text-center font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-        >
+        <a href={withBase("reports/")} class="group flex items-center justify-center rounded-xl bg-sky-600 p-6 text-center font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
           <div>
-            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-2xl">
-              →
-            </div>
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-2xl">→</div>
             <div class="mt-3">View All</div>
           </div>
         </a>
       </div>
     </div>
   </section>
+
+  <style>
+    .hero-left {
+      background: linear-gradient(135deg, #0b4f73 0%, #0b2f4a 55%, #081b2c 100%);
+      color: #fff;
+    }
+    .fade-up { opacity: 0; transform: translateY(12px); animation: fadeUp 700ms ease-out forwards; }
+    .delay-1 { animation-delay: 80ms; }
+    .delay-2 { animation-delay: 160ms; }
+    .delay-3 { animation-delay: 240ms; }
+    .delay-4 { animation-delay: 320ms; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-weight: 700; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: .45rem .7rem; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.25);
+      color: #fff; background: rgba(0,0,0,.25); backdrop-filter: blur(6px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; animation: none; }
+    }
+  </style>
+</Layout>
