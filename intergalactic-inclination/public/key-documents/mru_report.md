@@ -1,44 +1,9 @@
 ---
 title: "Does Aid Foster Growth? Empirical Evidence from the Mano River Union Region"
 author: "Haven Yarl"
-date: "2025-10-17"
-output: 
-  github_document:
-    toc: true
-    toc_depth: 3
-    preserve_yaml: true
-  rmdformats::downcute:
-    toc_depth: 3
-    self_contained: true
-    thumbnails: false
-    lightbox: true
-    gallery: false
-    highlight: "tango"
-    code_folding: show
-always_allow_html: true
-knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding,
-  output_format = "all") })
+#date: "01/06/2026"
+layout: single
 ---
-
-Does Aid Foster Growth? Empirical Evidence from the Mano River Union
-Region
-================
-Haven Yarl
-2025-10-17
-
-- [Abstract](#abstract)
-- [Background](#background)
-- [Development Assistance in the Mano River
-  Countries](#development-assistance-in-the-mano-river-countries)
-- [Assessing the Impact of Aid on GDP: Significance of the
-  Study](#assessing-the-impact-of-aid-on-gdp-significance-of-the-study)
-- [Methodology](#methodology)
-- [Descriptive Analysis of Aid Flows
-  (2010-2022)](#descriptive-analysis-of-aid-flows-2010-2022)
-- [Fixed Effects Analysis: Impact of Aid on Economic Growth
-  (2010-2022)](#fixed-effects-analysis-impact-of-aid-on-economic-growth-2010-2022)
-- [Discussion and Recommendations](#discussion-and-recommendations)
 
 # Abstract
 
