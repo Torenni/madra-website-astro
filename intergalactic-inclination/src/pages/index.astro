@@ -4,18 +4,14 @@ import Layout from "../layouts/Layout.astro";
 const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
 const withBase = (path) => `${base}/${path}`.replace(/\/+/g, "/");
 
-// HERO image
 const coverImg = withBase("images/covers/cover_page.webp");
-
-// Recent section cover image
-const mruCover = withBase("images/report_covers/mru_logo.jpg");
-
-// Report file
-const mruReport = withBase("key-documents/mru_report.md");
 ---
 
 <Layout title="MADRA" fullBleed>
-  <!-- FULL-BLEED HERO (edge-to-edge) -->
+  <!-- =========================
+       FULL-BLEED HERO (edge-to-edge)
+       IMPORTANT: This wrapper is what makes it full width.
+  ========================== -->
   <section
     class="
       relative w-screen max-w-none overflow-hidden
@@ -23,55 +19,31 @@ const mruReport = withBase("key-documents/mru_report.md");
     "
   >
     <div class="grid md:grid-cols-2 min-h-[520px]">
-      <!-- LEFT: Blue MADRA panel -->
+      <!-- LEFT PANEL (your existing left hero content) -->
       <div class="hero-left px-8 py-14 md:px-12 md:py-20 flex items-center">
         <div class="mx-auto w-full max-w-xl">
-          <span class="badge fade-up delay-1">Featured Report</span>
-
-          <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl fade-up delay-2">
-            MADRA
-          </h1>
-
-          <p class="mt-5 text-base text-white/85 md:text-lg fade-up delay-3">
-            A professional services firm providing strategy, project management,
-            monitoring & evaluation, and data solutions.
-          </p>
-
-          <div class="mt-8 flex flex-wrap gap-3 fade-up delay-4">
-            <a
-              class="rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-white/90"
-              href={withBase("reports/")}
-            >
-              View Reports
-            </a>
-
-            <a
-              class="rounded-md border border-white/35 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              href={withBase("about/")}
-            >
-              About MADRA
-            </a>
-          </div>
+          <!-- ✅ KEEP your existing hero text/buttons here -->
+          <!-- Example: badge, MADRA title, description, buttons -->
         </div>
       </div>
 
-      <!-- RIGHT: Image edge-to-edge -->
-      <div class="relative min-h-[520px]">
+      <!-- RIGHT IMAGE (cover photo) -->
+      <div class="relative">
         <img
           src={coverImg}
-          alt="MADRA cover image"
-          class="absolute inset-0 h-full w-full object-cover"
+          alt="MADRA cover"
+          class="h-full w-full object-cover"
           loading="eager"
           decoding="async"
         />
-        <div class="absolute inset-0 bg-slate-900/50"></div>
-        <div class="pointer-events-none absolute inset-0 shadow-[inset_0_0_160px_rgba(0,0,0,0.45)]"></div>
+        <!-- optional: overlay if you had one -->
       </div>
     </div>
   </section>
 
   <!-- =========================
        RECENT (IEG-style strip)
+       This should now appear UNDER the cover photos.
   ========================== -->
   <section class="border-t border-slate-200 bg-white">
     <div class="mx-auto max-w-6xl px-6 py-12">
@@ -116,14 +88,12 @@ const mruReport = withBase("key-documents/mru_report.md");
       <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <!-- Report card 1 -->
         <a
-          href={mruReport}
+          href={withBase("key-documents/mru_report/")}
           class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-          target="_blank"
-          rel="noreferrer"
         >
           <div class="aspect-[16/10] overflow-hidden bg-slate-100">
             <img
-              src={mruCover}
+              src={withBase("images/report_covers/mru_logo.jpg")}
               alt="Does Aid Foster Growth? cover"
               class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
               loading="lazy"
@@ -143,8 +113,7 @@ const mruReport = withBase("key-documents/mru_report.md");
             </h3>
 
             <div class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-slate-900">
-              Read Report
-              <span class="transition group-hover:translate-x-0.5">→</span>
+              Read Report <span class="transition group-hover:translate-x-0.5">→</span>
             </div>
           </div>
         </a>
@@ -177,53 +146,6 @@ const mruReport = withBase("key-documents/mru_report.md");
     </div>
   </section>
 
-  <style>
-    /* Blue panel (IEG-inspired) */
-    .hero-left {
-      background: linear-gradient(135deg, #0b4f73 0%, #0b2f4a 55%, #081b2c 100%);
-      color: #fff;
-    }
-
-    /* Fade-up animation */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 700ms ease-out forwards;
-    }
-    .delay-1 { animation-delay: 80ms; }
-    .delay-2 { animation-delay: 160ms; }
-    .delay-3 { animation-delay: 240ms; }
-    .delay-4 { animation-delay: 320ms; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Featured badge */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-weight: 700;
-      font-size: .75rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: .45rem .7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .25);
-      color: #fff;
-      background: rgba(0, 0, 0, .25);
-      backdrop-filter: blur(6px);
-    }
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      .fade-up {
-        opacity: 1;
-        transform: none;
-        animation: none;
-      }
-    }
-  </style>
+  <!-- ✅ keep your existing <style> block exactly as it was (hero-left, badge, etc.) -->
 </Layout>
 
