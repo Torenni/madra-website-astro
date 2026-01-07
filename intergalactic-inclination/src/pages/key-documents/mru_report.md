@@ -1,7 +1,8 @@
 ---
 title: "Does Aid Foster Growth? Empirical Evidence from the Mano River Union Region"
-layout: ../layouts/Layout.astro
+layout: ../../layouts/Layout.astro
 ---
+
 
 # Abstract
 
