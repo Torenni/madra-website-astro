@@ -3,6 +3,7 @@ title: "Does Aid Foster Growth? Empirical Evidence from the Mano River Union Reg
 layout: ../../layouts/Layout.astro
 ---
 
+<div class="report-md">
 
 # Abstract
 
@@ -385,5 +386,7 @@ img {
   border: 50px solid white;
 }
 </style>
+
+</div>
 
 </div>
