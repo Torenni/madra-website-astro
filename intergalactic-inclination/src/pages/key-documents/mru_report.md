@@ -5,6 +5,10 @@ layout: ../../layouts/Layout.astro
 
 <div class="report-md">
 
+# Does Aid Foster Growth? Empirical Evidence from the Mano River Union Region
+
+**Haven Yarl**
+
 # Abstract
 
 This study examines the influence of foreign aid on economic growth in
