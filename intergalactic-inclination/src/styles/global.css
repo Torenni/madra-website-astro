@@ -1,6 +1,91 @@
 @import "tailwindcss";
 
-/* optional: your custom globals below */
-html, body {
-  height: 100%;
+/* =========
+   Base font (site-wide)
+   ========= */
+:root {
+  /* Tailwind-like default stack */
+  --madra-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
 }
+
+html, body {
+  font-family: var(--madra-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========
+   Report Markdown styling (only inside .report-md)
+   ========= */
+.report-md {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.report-md p {
+  margin: 0.85rem 0;
+}
+
+/* Headings */
+.report-md h1, .report-md h2, .report-md h3 {
+  line-height: 1.25;
+  margin: 2rem 0 0.75rem;
+  font-weight: 700;
+}
+
+.report-md h1 { font-size: 2rem; }
+.report-md h2 { font-size: 1.6rem; }
+.report-md h3 { font-size: 1.25rem; }
+
+/* Lists */
+.report-md ul, .report-md ol {
+  margin: 0.75rem 0 0.75rem 1.5rem;
+}
+
+.report-md li {
+  margin: 0.35rem 0;
+}
+
+/* Images */
+.report-md img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.25rem auto;
+}
+
+/* Optional: figure caption look */
+.report-md figure {
+  margin: 1.5rem 0;
+}
+
+.report-md figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* Optional: blockquotes */
+.report-md blockquote {
+  border-left: 4px solid rgba(15, 23, 42, 0.25);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  opacity: 0.95;
+}
+
+/* Optional: true first-line indent (turn ON if you want it) */
+/*
+.report-md p {
+  text-indent: 1.5em;
+}
+.report-md p:first-of-type,
+.report-md p:has(strong),
+.report-md p:has(em) {
+  text-indent: 0;
+}
+*/
