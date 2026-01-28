@@ -229,10 +229,9 @@ COVID-19 pandemic (2020). After each crisis, Liberia resumed its upward
 trajectory, ultimately achieving its highest HDI score in 2023.
 
 <figure>
-<img src="../../assets/cwi_picss/hdi_trend.png"
-alt="Alt-text: Human Development Trend" />
-<figcaption aria-hidden="true">Alt-text: Human Development
-Trend</figcaption></figure>
+  <img src="../../assets/cwi_pics/hdi_trend.png" alt="Human Development Trend (Liberia, 2008–2023)" />
+  <figcaption aria-hidden="true">Human Development Trend (Liberia, 2008–2023)</figcaption>
+</figure>
 
 When comparing the three plan periods, clear differences in performance
 emerge. The PRS years recorded the lowest HDI levels, averaging roughly
