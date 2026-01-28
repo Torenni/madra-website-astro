@@ -2,7 +2,10 @@
 title: "Evaluating Post-War Development Outcomes in Liberia: A County-Level Analysis Using Community Well-Being and Human Development Indexes (2008-2023)"
 layout: ../../layouts/Layout.astro
 fullBleed: true
+category: "Key Document"
+cardImage: "images/report_covers/road.png"
 ---
+
 
 <div class="report-md">
 
