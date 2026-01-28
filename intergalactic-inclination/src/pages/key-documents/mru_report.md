@@ -1,7 +1,11 @@
 ---
 title: "Does Aid Foster Growth? Empirical Evidence from the Mano River Union Region"
 layout: ../../layouts/Layout.astro
+fullBleed: true
+category: "Key Document"
+cardImage: "images/report_covers/mru_logo.jpg"
 ---
+
 
 <div class="report-md">
 
