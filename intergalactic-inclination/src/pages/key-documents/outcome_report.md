@@ -308,7 +308,7 @@ access to essential services and decreased economic stability. Poor
 health outcomes, weaker governance, and higher dependence on traditional
 livelihoods are likely contributing factors to these low scores.
 
-<iframe align="center" width="1000" height="800" src="../../assets/cwi_pics/county_cwi.html"></iframe>
+<iframe align="center" width="1000" height="800" src="images/cwi_pics/county_cwi.html"></iframe>
 
 Further down the spectrum, Grand Kru (14.25), Grand Bassa (13.87), and
 Lofa (5.48) score extremely low, reflecting substantial developmental
@@ -339,7 +339,7 @@ Bong, and Grand Kru, exhibits distinct structural barriers to wellbeing,
 characterized by weaker infrastructure, limited service availability,
 and greater exposure to social and economic shocks.
 
-<iframe align="center" width="110%" height="700px" src="../../assets/cwi_pics/county_cat.html"></iframe>
+<iframe align="center" width="110%" height="700px" src="images/cwi_pics/county_cat.html"></iframe>
 
 Finally, the Most Vulnerable counties, including Grand Bassa, Lofa,
 Gbarpolu, and Rivercess, represent the areas of greatest concern. Their
