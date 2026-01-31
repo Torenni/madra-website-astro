@@ -13,13 +13,13 @@ cardImage: "images/report_covers/road.png"
 <section
   class="relative w-screen max-w-none overflow-hidden left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
 >
-  <img
-    src="../../assets/cwi_pics/road.png"
-    alt="Liberia roads and infrastructure (cover)"
-    class="h-[340px] w-full object-cover md:h-[440px]"
-    loading="eager"
-    decoding="async"
-  />
+<img
+  src="images/report_covers/road.png"
+  alt="Liberia roads and infrastructure (cover)"
+  class="h-[340px] w-full object-cover md:h-[440px]"
+  loading="eager"
+  decoding="async"
+/>
 </section>
 
 # Evaluating Post-War Development Outcomes in Liberia: A County-Level Analysis Using Community Well-Being and Human Development Indexes (2008-2023)
