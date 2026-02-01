@@ -8,6 +8,7 @@ const withBase = (path) => `${base}/${path}`.replace(/\/+/g, "/");
 const coverImg = withBase("images/covers/cover_page.webp");
 
 // ✅ Auto-load all key-document markdown pages
+
 const docs = await Promise.all(
   Object.entries(import.meta.glob("./key-documents/*.md")).map(async ([path, loader]) => {
     const mod = await loader();
@@ -17,10 +18,12 @@ const docs = await Promise.all(
       title: fm.title ?? "Untitled",
       category: fm.category ?? "Key Document",
       cardImage: fm.cardImage ?? "images/report_covers/mru_logo.jpg",
-      url: path.replace("./", "").replace(/\.md$/, "/"), // e.g. key-documents/outcome_report/
+      pdfUrl: fm.pdfUrl ?? null, // ✅ ADD THIS LINE
+      url: path.replace("./", "").replace(/\.md$/, "/"),
     };
   })
 );
+
 
 // optional: stable ordering (alphabetical by title)
 docs.sort((a, b) => a.title.localeCompare(b.title));
@@ -108,7 +111,9 @@ const recentKeyDocs = docs.slice(0, 2);
 <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
   {recentKeyDocs.map((item) => (
     <a
-      href={withBase(item.url)}
+      href={withBase(item.pdfUrl ?? item.url)}
+      target={item.pdfUrl ? "_blank" : undefined}
+      rel={item.pdfUrl ? "noreferrer" : undefined}
       class="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
       <div class="aspect-[16/10] overflow-hidden bg-slate-100">
